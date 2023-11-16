@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --window-spacing: 6px;
+  --window-border: 1px solid;
+  --window-border-radius: 6px;
+  --window-border-color: rgba(0, 0, 0, 0.7);
+  --window-background-color: #4580c4;
+  --window-background-glass-stripes: linear-gradient(
+      135deg,
+      #fff5 70px,
+      transparent 100px
+    ),
+    linear-gradient(225deg, #fff5 70px, transparent 100px),
+    linear-gradient(
+        54deg,
+        /* ------------------------------- 1st stripe ------------------------------- */
+          #0002 0 4%,
+        #6661 6% 6%,
+        #0002 8% 10%,
+        /* ------------------------------- 2nd stripe ------------------------------- */
+          #0002 15% 16%,
+        #aaa1 17% 18%,
+        #0002 23% 24%,
+        /* ------------------------------- 3rd stripe ------------------------------- */
+          #bbb2 25% 26%,
+        #0002 31% 33%,
+        /* ------------------------------- 4th stripe ------------------------------- */
+          #0002 34% 34.5%,
+        #bbb2 36% 40%,
+        /* ------------------------------- 5th stripe ------------------------------- */
+          #0002 41% 41.5%,
+        #bbb2 44% 45%,
+        /* ------------------------------- 6th stripe ------------------------------- */
+          #bbb2 46% 47%,
+        #0002 48% 49%,
+        #0002 50% 50.5%,
+        /* ------------------------------- 7th stripe ------------------------------- */
+          #0002 56% 56.5%,
+        #bbb2 57% 63%,
+        #0002 67% 69%,
+        /* ------------------------------- 8th stripe ------------------------------- */
+          #bbb2 69.5% 70%,
+        #0002 73.5% 74%,
+        /* ------------------------------- 9th stripe ------------------------------- */
+          #bbb2 74.5% 79%,
+        #0002 80% 84%,
+        /* ------------------------------- 10th stripe ------------------------------- */
+          #aaa2 85% 86%,
+        #0002 87%,
+        #bbb1 90%
+      )
+      left center/100vw 100vh no-repeat fixed;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.react-resizable {
+  position: absolute;
+}
+
+.react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pg08IS0tIEdlbmVyYXRvcjogQWRvYmUgRmlyZXdvcmtzIENTNiwgRXhwb3J0IFNWRyBFeHRlbnNpb24gYnkgQWFyb24gQmVhbGwgKGh0dHA6Ly9maXJld29ya3MuYWJlYWxsLmNvbSkgLiBWZXJzaW9uOiAwLjYuMSAgLS0+DTwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DTxzdmcgaWQ9IlVudGl0bGVkLVBhZ2UlMjAxIiB2aWV3Qm94PSIwIDAgNiA2IiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjojZmZmZmZmMDAiIHZlcnNpb249IjEuMSINCXhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiDQl4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjZweCIgaGVpZ2h0PSI2cHgiDT4NCTxnIG9wYWNpdHk9IjAuMzAyIj4NCQk8cGF0aCBkPSJNIDYgNiBMIDAgNiBMIDAgNC4yIEwgNCA0LjIgTCA0LjIgNC4yIEwgNC4yIDAgTCA2IDAgTCA2IDYgTCA2IDYgWiIgZmlsbD0iIzAwMDAwMCIvPg0JPC9nPg08L3N2Zz4=');
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  cursor: se-resize;
+}
