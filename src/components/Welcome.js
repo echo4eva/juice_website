@@ -30,19 +30,19 @@ export default function Welcome(props) {
                         <Image src="/whoami.png" width="85" height="85" className="cursor-pointer"/>
                         <p className="cursor-pointer">Who is Juice</p>
                     </div>
-                    <div className="flex flex row items-center hover:border">
+                    <div className="flex flex row items-center hover:border" onClick={() => {props.onClickGames()}}>
                         <Image src="/games.png" width="85" height="85" className="cursor-pointer"/>
                         <p className="cursor-pointer">View game library</p>
                     </div>
-                    <div className="flex flex row items-center hover:border">
+                    <div className="flex flex row items-center hover:border" onClick={() => {props.onClickMusic()}}>
                         <Image src="/music.png" width="75" height="75" className="cursor-pointer"/>
                         <p className="pl-2 cursor-pointer">View music library</p>
                     </div>
-                    <div className="flex flex row items-center hover:border">
+                    <div className="flex flex row items-center hover:border" onClick={() => {props.onClickShows()}}>
                         <Image src="/shows.png" width="85" height="85" className="cursor-pointer"/>
                         <p className="cursor-pointer">View show library</p>
                     </div>
-                    <div className="flex flex row items-center hover:border">
+                    <div className="flex flex row items-center hover:border" onClick={() => {props.onClickGallery()}}>
                         <Image src="/photos.png" width="75" height="75" className="cursor-pointer"/>
                         <p className="pl-2 cursor-pointer">View gallery</p>
                     </div>
@@ -52,7 +52,7 @@ export default function Welcome(props) {
                     <div className="w-[100%] m-[12px] border border-sky-200"></div>
                 </div>
                 <div className="grid grid-rows-2 grid-cols-3 gap-2">
-                    <div className="flex flex row items-center hover:border">
+                    <div className="flex flex row items-center hover:border" onClick={() => {props.onClickCreated()}}>
                         <Image src="/creator.png" width="85" height="85" className="cursor-pointer"/>
                         <p className="cursor-pointer">Who created this</p>
                     </div>

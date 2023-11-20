@@ -6,12 +6,11 @@ import Image from 'next/image';
 
 export default function Window(props) {
 
-    const [active, isActive] = useState(true);
     const [index, setIndex] = useState(props.defaultZ + props.addZ);
     const clickableRef = useRef(null);
 
     useEffect(() => {
-        if (!clickableRef.current || !active) return;
+        if (!clickableRef.current || !props.active) return;
 
         const clickable = clickableRef.current;
 
@@ -69,7 +68,7 @@ export default function Window(props) {
                                 <button className={`${styles.button} border-r p-1`}>
                                     <Image src="/maximize.png" width="11" height="10" />
                                 </button>
-                                <button className="px-2.5 hover:bg-red-400" onClick={() => {isActive(false)}}>
+                                <button className="px-2.5 hover:bg-red-400" onClick={() => {props.isActive(false)}}>
                                     <Image src="/close.png" width="10" height="10" />
                                 </button>
                             </div>
@@ -82,9 +81,7 @@ export default function Window(props) {
         )
     }
 
-    if (active) {
-        return (window())
-    } else {
-        return null;
-    }
+    return (
+        window()
+    )
 }
