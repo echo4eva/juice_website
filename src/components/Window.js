@@ -7,7 +7,7 @@ import Image from 'next/image';
 export default function Window(props) {
 
     const [active, isActive] = useState(true);
-    const [index, setIndex] = useState(props.defaultZ);
+    const [index, setIndex] = useState(props.defaultZ + props.addZ);
     const clickableRef = useRef(null);
 
     useEffect(() => {
@@ -16,7 +16,7 @@ export default function Window(props) {
         const clickable = clickableRef.current;
 
         const onMouseDown = (e) => {
-            setIndex(100);
+            setIndex(100 + props.defaultZ);
         }
 
         const onOutsideDown = (e) => {
@@ -48,13 +48,12 @@ export default function Window(props) {
             >
                 {/* container */}
                 <ResizableBox 
-                    height={200} 
-                    width={300} 
+                    height={props.defaultHeight} 
+                    width={props.defaultWidth} 
                     resizeHandles={['se']}
                     minConstraints={[300, 195]}
                     maxConstraints={[Infinity, Infinity]}
                     style={{ zIndex: index}}
-
                 >
                     <div className={`${styles.body} absolute flex flex-col fixed h-[100%] w-[100%] border rounded p-1.5 backdrop-blur-xl rounded-md`} 
                         ref={clickableRef}
@@ -70,17 +69,13 @@ export default function Window(props) {
                                 <button className={`${styles.button} border-r p-1`}>
                                     <Image src="/maximize.png" width="11" height="10" />
                                 </button>
-                                <button className="p-1 hover:bg-red-400" onClick={() => {isActive(false)}}>
+                                <button className="px-2.5 hover:bg-red-400" onClick={() => {isActive(false)}}>
                                     <Image src="/close.png" width="10" height="10" />
                                 </button>
                             </div>
                         </div>
                         {/* contents of container */}
-                        <div className="flex flex-col bg-white w-[100%] h-[100%] p-1 overflow-auto">
-                            {props.content?.map((line) =>
-                                <p key={line}>{line}</p>
-                            )}
-                        </div>
+                        {props.children}
                     </div>
                 </ResizableBox>
             </Draggable>
