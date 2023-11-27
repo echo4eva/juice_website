@@ -7,10 +7,10 @@ import Music from "@/components/Music";
 import Shows from "@/components/Shows";
 import Gallery from "@/components/Gallery";
 import Created from "@/components/Created";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
-  
+
   const [welcome, setWelcome] = useState(true);
   const [intro, setIntro] = useState(false);
   const [games, setGames] = useState(false);
@@ -21,12 +21,14 @@ export default function Home() {
 
   const props = [{
     id: 1,
-    defaultX: 300,
+    name: "Welcome Center",
+    defaultX: 200,
     defaultY: 75,
     defaultZ: 0,
     addZ: 0,
     defaultWidth: 900,
     defaultHeight: 700,
+    defaultConstraint: [900, 700],
     children: <Welcome 
       onClickIntro={() => {setIntro(true)}}
       onClickGames={() => {setGames(true)}}
@@ -39,6 +41,7 @@ export default function Home() {
     isActive: setWelcome
   }, {
     id: 1,
+    name: "About Me - Notepad",
     defaultX: 250,
     defaultY: 50,
     defaultZ: 1,
@@ -50,6 +53,7 @@ export default function Home() {
     isActive: setIntro
   }, {
     id: 2,
+    name: "Games - Notepad",
     defaultX: 265,
     defaultY: 70,
     defaultZ: 2,
@@ -61,6 +65,7 @@ export default function Home() {
     isActive: setGames
   }, {
     id: 3,
+    name: "Music - Notepad",
     defaultX: 275,
     defaultY: 90,
     defaultZ: 3,
@@ -72,6 +77,7 @@ export default function Home() {
     isActive: setMusic
   }, {
     id: 4,
+    name: "Shows - Notepad",
     defaultX: 285,
     defaultY: 110,
     defaultZ: 4,
@@ -94,6 +100,7 @@ export default function Home() {
     isActive: setGallery
   }, {
     id: 6,
+    name: "Creator - Notepad",
     defaultX: 305,
     defaultY: 150,
     defaultZ: 6,
