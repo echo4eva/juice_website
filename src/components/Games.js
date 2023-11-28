@@ -9,13 +9,13 @@ export default function Games () {
                 her ult is literally like that “IMA FIRIN MAH LAZOR” guy from youtube ROFL XD.
                 plus she is so pretty im literally her :3
                 teemo is the cutest though! i love to play him botlane support! my adc might get mad
-                but they're gay so whatevs XDDDD
+                but they&apos;re gay so whatevs XDDDD
                 <br></br>
                 <br></br>
                 <span className="text-blue-300"><b>valorant</b></span> is cool too! my first online fps game ive ever played!
                 its cooler than  cs source and grandpa quake LOL.
                 like why use nades when you have superpowers like jett (my gf)?
-                peeps on the forums say valorants for noobs but idc, it’s fun4me.
+                peeps on the forums say valorants for noobs but idc, it&apos;s fun4me.
                 <br></br>
                 <br></br>
                 <span className="text-blue-300"><b>minecraft</b></span> and the <span className="text-blue-300"><b>sims</b></span> are my favorite comfort games!
