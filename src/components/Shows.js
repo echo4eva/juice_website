@@ -3,7 +3,7 @@ export default function Shows () {
         <div className="flex flex-col w-[100%] h-[100%] p-1 bg-white overflow-auto">
             <p>
                 <span className="text-blue-300"><b>h2o</b></span> is my favorite show of all time! 
-                [insert why because idk. talk about kleo and why u like her and possibly relate. how u would like to be a mermaid idk]
+                i grew up watching it and loved the magic and fun. cleo is tots my favorite mermaid!
                 <br></br>
                 <br></br>
                 OMG dont get me started on <span className="text-blue-300"><b>naruto</b></span>! its like one of the best animes ive seen!11!!
