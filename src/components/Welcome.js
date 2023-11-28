@@ -5,13 +5,21 @@ export default function Welcome(props) {
 
     return (
         <div className="flex flex-col w-[100%] h-[100%] overflow-hidden">
-            <div className="relative flex w-[100%] h-[35%] border-2 overflow-hidden">
+            <div className="relative flex w-[100%] h-[35%] overflow-hidden">
                 <Image src="/wata.jpg" width="1000" height="563" className="absolute"/>
-                {/* vv above img vv */}
-                <Image src="/computa.png" width="175" height="175" className="absolute left-5" />
-                <p className="absolute bottom-0 right-0 text-7xl text-white text-opacity-25">welcome</p>
+                {/* vv above img (need absolute) vv */}
+                {/* username with pfp */}
+                <div className="absolute w-[100%] border-b-2 border-white border-opacity-25 mt-4 py-1 bg-black bg-opacity-30">
+                    <p className={`${styles.text} text-white pl-[60px] opacity-100`}>juice</p>
+                </div>
+                <div className={`${styles.pfp} absolute p-[4px] mt-1 ml-1 bg-white/30 rounded backdrop-blur`}>
+                    <Image src="/pfp.jpg" width="35" height="35"/>
+                </div>
+                {/* the computa and "welcome" */}
+                <Image src="/computa.png" width="175" height="175" className="absolute left-5 mt-8" />
+                <p className="absolute bottom-[-4%] right-[1%] text-7xl text-white text-opacity-25">welcome</p>
                 {/* le text */}
-                <div className={`${styles.specs} flex flex-col absolute top-[20%] left-[25%] text-white text-sm`}>
+                <div className={`${styles.text} flex flex-col absolute top-[35%] left-[25%] text-white text-sm`}>
                     <p>Windows Vista Ultimate</p>
                     <p>Intel® Core™2 Quad Processor Q6600 @2.40 GHz</p>
                     <p>8192 MB RAM</p>
@@ -20,7 +28,7 @@ export default function Welcome(props) {
                 </div>
             </div>
             {/* the beefge */}
-            <div className="w-[100%] h-[65%] flex flex-col overflow-y-auto bg-white border-2 p-2">
+            <div className="w-[100%] h-[65%] flex flex-col overflow-y-auto bg-white p-2">
                 <div className="flex flex-row space-between py-3">
                     <p className="text-sky-800 whitespace-nowrap">1. - Get started with Windows!</p>
                     <div className="border w-[100%] m-[12px] border-sky-200"></div>
@@ -42,10 +50,10 @@ export default function Welcome(props) {
                         <Image src="/shows.png" width="85" height="85" className="cursor-pointer"/>
                         <p className="cursor-pointer">View show library</p>
                     </div>
-                    <div className="flex flex row items-center hover:border" onClick={() => {props.onClickGallery()}}>
+                    {/* <div className="flex flex row items-center hover:border" onClick={() => {props.onClickGallery()}}>
                         <Image src="/photos.png" width="75" height="75" className="cursor-pointer"/>
                         <p className="pl-2 cursor-pointer">View gallery</p>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="flex flex-row space-between py-3">
                     <p className="text-sky-800 whitespace-nowrap">2. - Extra</p>
