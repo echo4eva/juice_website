@@ -4,19 +4,21 @@ import { ResizableBox } from "react-resizable";
 import { useState, useRef, useEffect } from "react";
 import Image from 'next/image';
 import { Inika } from 'next/font/google';
+import useWindowSize from '@/hooks/useWindowSize';
 
 export default function Window(props) {
 
-    const isBrowser = (typeof window !== "undefined");
+    const windowSize = useWindowSize()
+
+    const [x, setX] = useState(props.defaultX);
+    const [y, setY] = useState(props.defaultY);
     
-    const [windowW, setWW] = useState(isBrowser ? window.innerWidth : 0);
-    const [windowH, setWH] = useState(isBrowser ? window.innerHeight : 0);
+    const windowW = windowSize.width
+    const windowH = windowSize.height
 
     const [index, setIndex] = useState(props.defaultZ + props.addZ);
     const clickableRef = useRef(null);
 
-    const [x, setX] = useState(props.defaultX)
-    const [y, setY] = useState(props.defaultY)
     const [curW, setW] = useState(props.defaultWidth)
     const [curH, setH] = useState(props.defaultHeight)
     const [maxW, setMW] = useState(0);
