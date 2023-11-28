@@ -19,12 +19,12 @@ export default function Welcome(props) {
                 <Image src="/computa.png" width="175" height="175" className="absolute left-5 mt-8" />
                 <p className="absolute bottom-[-4%] right-[1%] text-7xl text-white text-opacity-25">welcome</p>
                 {/* le text */}
-                <div className={`${styles.text} flex flex-col absolute top-[35%] left-[25%] text-white text-sm`}>
-                    <p>Windows Vista Ultimate</p>
-                    <p>Intel® Core™2 Quad Processor Q6600 @2.40 GHz</p>
-                    <p>8192 MB RAM</p>
-                    <p>NVIDIA GeForce GTX 280</p>
-                    <p>Computer Name: JU1C3-PC</p>
+                <div className={`${styles.text} flex flex-col absolute top-[35%] left-[25%]  opacity-100 text-sm`}>
+                    <p className="text-white">Windows Vista Ultimate</p>
+                    <p className="text-white">Intel® Core™2 Quad Processor Q6600 @2.40 GHz</p>
+                    <p className="text-white">8192 MB RAM</p>
+                    <p className="text-white">NVIDIA GeForce GTX 280</p>
+                    <p className="text-white">Computer Name: JU1C3-PC</p>
                 </div>
             </div>
             {/* the beefge */}
